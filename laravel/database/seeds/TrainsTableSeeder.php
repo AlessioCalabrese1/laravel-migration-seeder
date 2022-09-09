@@ -21,9 +21,20 @@ class TrainsTableSeeder extends Seeder
                 'arrival_time' => '19:30:10',
                 'train_code' => '11G2I45G9I87N011O',
                 'number_of_carriages' => 9,
+                'in_time' => 1,
+                'deleted' => 0
+            ],
+            [
+                'agency' => 'Italo',
+                'departure_station' => 'Milano',
+                'arrival_station' => 'Firenze',
+                'departure_time' => '11:30:10',
+                'arrival_time' => '15:30:10',
+                'train_code' => '11G2I45G9I87N011O',
+                'number_of_carriages' => 6,
                 'in_time' => 0,
                 'deleted' => 0
-            ]
+            ],
         ];
         foreach ($trains as $train) {
             $newTrain = new Train();

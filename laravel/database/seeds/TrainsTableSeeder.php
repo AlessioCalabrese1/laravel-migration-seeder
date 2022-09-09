@@ -13,12 +13,30 @@ class TrainsTableSeeder extends Seeder
     public function run()
     {
         $trains = [
-            new Train([1, 'Italo', 'Napoli', 'Roma', '16:30:10', 
-            '19:30:10', '11G2I45G9I87N011O', 9, 0, 0]),
+            [
+                'agency' => 'Italo',
+                'departure_station' => 'Napoli',
+                'arrival_station' => 'Roma',
+                'departure_time' => '16:30:10',
+                'arrival_time' => '19:30:10',
+                'train_code' => '11G2I45G9I87N011O',
+                'number_of_carriages' => 9,
+                'in_time' => 0,
+                'deleted' => 0
+            ]
         ];
-
         foreach ($trains as $train) {
-            $train->save();
+            $newTrain = new Train();
+            $newTrain->agency = $train['agency'];
+            $newTrain->departure_station = $train['departure_station'];
+            $newTrain->arrival_station = $train['arrival_station'];
+            $newTrain->departure_time = $train['departure_time'];
+            $newTrain->arrival_time = $train['arrival_time'];
+            $newTrain->train_code = $train['train_code'];
+            $newTrain->number_of_carriages = $train['number_of_carriages'];
+            $newTrain->in_time = $train['in_time'];
+            $newTrain->deleted = $train['deleted'];
+            $newTrain->save();
         }
     }
 }
